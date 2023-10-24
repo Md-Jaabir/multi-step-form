@@ -1,0 +1,238 @@
+@media screen and (min-width:1000px) {
+    /* step1 starts */
+    .form .sidebar {
+        display: flex;
+    }
+
+    .top-bar,
+    .bottom-bar.mobile,
+    .space {
+        display: none;
+    }
+
+    .form {
+        display: flex;
+        width: 825px;
+        gap: 30px;
+        padding: 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 35px 30px;
+        width: 460px;
+        height: 465px;
+        background-image: url(assets/images/bg-sidebar-desktop.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 4px;
+    }
+
+    .sidebar .menu-item .round-button {
+        margin-top: 0;
+    }
+
+    .sidebar .menu-item {
+        display: flex;
+        gap: 15px;
+        cursor: pointer;
+
+    }
+
+    .sidebar .menu-item .round-button {
+        height: 30px;
+        width: 30px;
+        font-size: 12px;
+        padding-bottom: 3px;
+    }
+
+    .sidebar .title {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .sidebar .title .step-name {
+        font-size: 12px;
+        color: var(--dark-gray);
+    }
+
+    .sidebar .title .name {
+        font-size: 13px;
+        font-weight: 450;
+        color: var(--white);
+    }
+
+    .step-1 {
+        padding: 40px 65px;
+        position: relative;
+    }
+
+    .step .header {
+        font-size: 27px;
+    }
+
+    .step .description {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .step-1 .inputs {
+        margin-top: 25px;
+        gap: 20px;
+    }
+
+    .step-1 .inputs .input {
+        gap: 7px;
+    }
+
+
+
+    .step .bottom-bar {
+        display: flex;
+        width: 84%;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .bottom-bar .next-button {
+        padding: 14px 19px;
+        font-size: 13px;
+    }
+
+    .step .bottom-bar button {
+        cursor: pointer;
+    }
+
+    .step-1{
+        width: 130%;
+    }
+    /* step 1 finishes */
+    /* step 2 starts */
+
+    .step-2{
+        width: 139%;
+    }
+
+    .mobile-breaks{
+        display: none;
+    }
+
+    .step-2{
+        padding: 30px 39px;
+        position: relative;
+    }
+
+    .step-2 .options{
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .step-2 .bottom-bar{
+        bottom: -10px;
+    }
+
+    .options .option{
+        flex-direction: column;
+        width: fit-content;
+        gap: 30px;
+        padding: 20px;
+        padding-right: 23px;
+        cursor: pointer;
+    }
+
+    .option .desc{
+        align-items: flex-start;
+        margin-left: 0;
+    }
+
+    /* step 2 finishes */
+    /* step 3 starts */
+
+    .step-3{
+        position: relative;
+        padding: 28px 57px;
+    }
+
+    .add-ons .add-on{
+        width: 415px;
+        padding: 18px 25px;
+        cursor: pointer;
+    }
+
+    
+
+    .add-on .title{
+        margin-left: 20px;
+    }
+
+    .add-on .price{
+        right: 25px;
+    }
+
+    .add-on .checkbox{
+        height: 20px;
+        width: 20px;
+    }
+
+    .step-3 .bottom-bar{
+        width: 89%;
+        bottom: -10px;
+    }
+
+    /* step 3 finishes */
+    /* setep 4 starts */
+
+    .step-4{
+        padding: 40px 67.5px;
+        position: relative;
+        width: 529px;
+    }
+
+    .step-4 .plans{
+        margin-top: 25px;
+        padding: 25px;
+        width: 400px;
+    }
+
+    .step-4 .bottom-bar{
+        bottom: -10px;
+    }
+
+    .step-4 .bottom-bar .next-button{
+        background-color: var(--dark-blue);
+        padding: 13px 28px;
+        font-weight: 500;
+        transition: .2s linear;
+    }
+
+    .step-4 .bottom-bar .next-button:hover{
+        background-color: var(--lighter-blue);
+    }
+
+    /* step 4 finishes */
+    /* step 5 starts */
+
+    .step-5{
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-3%);
+    }
+    .step-5 .description{
+        padding-inline: 60px;
+    }
+
+    .step-5 img{
+        left: 0;
+        transform: none;
+        height: 65px;
+        width: 65px;
+    }
+}

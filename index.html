@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="desktop.css">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+
+<body>
+    <div class="top-bar">
+      <div class="round-button active" onclick="switchStep(0)">1</div>
+      <div class="round-button" onclick="switchStep(1)">2</div>
+      <div class="round-button" onclick="switchStep(2)">3</div>
+      <div class="round-button" onclick="switchStep(3)">4</div>
+    </div>
+    <div class="form">
+      <div class="sidebar">
+        <div class="menu-item" onclick="switchStep(0)"><div class="round-button active">1</div><div class="title"><p class="step-name">STEP 1</p><p class="name">YOUR INFO</p></div></div>
+        <div class="menu-item" onclick="switchStep(1)"><div class="round-button">2</div><div class="title"><p class="step-name">STEP 2</p><p class="name">SELECT PLAN</p></div></div>
+        <div class="menu-item" onclick="switchStep(2)"><div class="round-button">3</div><div class="title"><p class="step-name">STEP 3</p><p class="name">ADD-ONS</p></div></div>
+        <div class="menu-item" onclick="switchStep(3)"><div class="round-button">4</div><div class="title"><p class="step-name">STEP 4</p><p class="name">SUMMARY</p></div></div>
+      </div>
+      <div class="step step-1 active">
+        <h1 class="header">Personal info</h1>
+        <p class="description">Please provide your name,email address and phone number</p>
+        <div class="inputs">
+          <div class="input name">
+            <div class="label"><p>Name</p><p class="error">This field is required</p></div>
+            <input id="name" onchange="handleInputChange(this)" type="text" placeholder="e.g. Stephen King">
+          </div>
+          <div class="input email">
+            <div class="label"><p>Email Address</p><p class="error">This field is required</p></div>
+            <input id="email" onchange="handleInputChange(this)" type="email" placeholder="e.g. stephenking@lorem.com">
+          </div>
+          <div class="input phone">
+            <div class="label"><p>Phone number</p><p class="error">This field is required</p></div>
+            <input id="phone" onchange="handleInputChange(this)" type="number" placeholder="e.g. +1 234 567 890">
+          </div>
+        </div>
+        <div class="bottom-bar">
+          <button class="back-button" style="visibility: hidden;">Go back</button>
+          <button class="next-button" onclick="nextAtFirstStep()">Next Step</button>
+        </div>
+      </div>
+      <div class="step step-2 ">
+        <h1 class="header">Select your plan</h1>
+        <p class="description">You have the option of monthly or <br class="mobile-breaks"> yearly billing.</p>
+        <div class="options">
+          <div id="arcade" onclick="selectPlan(0)" class="option active">
+            <img src="assets/images/icon-arcade.svg" alt="">
+            <div class="desc">
+              <h3>Arcade</h3>
+              <p class="price">$9/mo</p>
+              <p>2 months free</p>
+            </div>
+
+          </div>
+          <div id="advanced" onclick="selectPlan(1)" class="option">
+            <img src="assets/images/icon-advanced.svg" alt="">
+            <div class="desc">
+              <h3>Advanced</h3>
+              <p class="price">$12/mo</p>
+              <p>2 months free</p>
+            </div>
+
+          </div>
+          <div id="pro" onclick="selectPlan(2)" class="option">
+            <img src="assets/images/icon-pro.svg" alt="">
+            <div class="desc">
+              <h3>Pro</h3>
+              <p class="price">$15/mo</p>
+              <p>2 months free</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="billing-duration">
+          <span class="monthly active">Monthly</span>
+          <div class="switch monthly">
+            <div class="round-slider"></div>
+          </div>
+          <span class="yearly">Yearly</span>
+        </div>
+        <div class="bottom-bar">
+          <button class="back-button" onclick="goBack()">Go back</button>
+          <button class="next-button" onclick="nextStep()">Next Step</button>
+        </div>
+      </div>
+      <div class="step step-3 ">
+        <h1 class="header">Pick add-ons</h1>
+        <p class="description">Add-ons help enhance your gaming experience</p>
+        <div class="add-ons">
+          <div id="online-service" onclick="handleAddOn(0)" class="add-on active">
+            <div class="checkbox"><img src="assets/images/checkmark.PNG" alt=""></div>
+            <div class="title">
+              <h3>Online service</h3>
+              <p>Access to multiplayer game</p>
+            </div>
+            <p class="price">+$1/mo</p>
+          </div>
+          <div id="larger-storage" onclick="handleAddOn(1)" class="add-on active">
+            <div class="checkbox"><img src="assets/images/checkmark.PNG" alt=""></div>
+            <div class="title">
+              <h3>Larger storage</h3>
+              <p>Extra 1TB of cloud save</p>
+            </div>
+            <p class="price">+$2/mo</p>
+          </div>
+          <div id="customizable-profile" onclick="handleAddOn(2)" class="add-on">
+            <div class="checkbox"><img src="assets/images/checkmark.PNG" alt=""></div>
+            <div class="title">
+              <h3>Customizable profile</h3>
+              <p>Customize your profile</p>
+            </div>
+            <p class="price">+$2/mo</p>
+          </div>
+        </div>
+        <div class="bottom-bar">
+          <button class="back-button" onclick="goBack()">Go back</button>
+          <button class="next-button" onclick="nextStep()">Next Step</button>
+        </div>
+      </div>
+      <div class="step step-4 ">
+        <h1 class="header">Finishing up</h1>
+        <p class="description">Double-check every thing look OK before confirming</p>
+        <div class="plans">
+          <div class="plan">
+            <div class="title">
+              <h3>Arcade(Monthly)</h3>
+              <a href="#" onclick="switchStep(1)">Change</a>
+            </div>
+            <div class="price">$9/mo</div>
+          </div>
+          <div class="line"></div>
+          <div class="add-on-list">
+          </div>
+
+        </div>
+        <div class="total">
+          <p class="title">Total(per month)</p>
+          <p class="total-price">+$12/mo</p>
+        </div>
+        <div class="bottom-bar">
+          <button class="back-button" onclick="goBack()">Go back</button>
+          <button class="next-button" onclick="confirm()">Confirm</button>
+        </div>
+      </div>
+      <div class="step step-5" >
+        <img src="assets/images/icon-checkmark.png" alt="">
+        <h1 class="header">Thank you!</h1>
+        <p class="description">Thanks for confirming your subscription! <br class="mobile-breaks">We hope you have fun using our platform.If
+          you ever need support,<br class="mobile-breaks"> please feel free to email us at support@loremgaming.com</p>
+      </div>
+    
+  </div>
+  <div class="space"></div>
+  <div class="bottom-bar mobile">
+    
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
