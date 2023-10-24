@@ -7,7 +7,7 @@
     .top-bar,
     .bottom-bar.mobile,
     .space {
-        display: none;
+        display: none !important;
     }
 
     .form {
